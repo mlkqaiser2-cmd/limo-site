@@ -2,48 +2,77 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JFK Black Cars | NYC Airport Limo</title>
+<title>JFK Black Cars | Premium NYC Limo Service</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-:root{--black:#0a0a0a;--platinum:#e5e5e5;--gold:#c9a96e}
-*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-body{background:var(--black);color:var(--platinum)}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 5%}
-h1{font-size:3rem;margin-bottom:.5em}
-.btn{background:var(--gold);color:var(--black);padding:12px 28px;border:none;font-weight:700;border-radius:4px;cursor:pointer;margin:10px 0;display:inline-block}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
-footer{background:#080808;padding:30px 5%;text-align:center;font-size:.85rem;color:var(--platinum);opacity:.7}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div style="font-weight:700;font-size:1.4rem">JFK <span style="color:var(--gold)">BLACK CARS</span></div>
-  <nav style="gap:20px;display:flex"><a href="#fleet" style="color:var(--platinum)">Fleet</a><a href="#quote" style="color:var(--platinum)">Quote</a><a href="#contact" style="color:var(--platinum)">Contact</a></nav>
+<header class="topbar">
+  <div class="logo">JFK <span>Black Cars</span></div>
+  <nav>
+    <a href="#fleet">Fleet</a>
+    <a href="#quote">Quote</a>
+    <a href="#contact">Contact</a>
+    <a href="#quote" class="btn-outline">Book now</a>
+  </nav>
 </header>
 
 <section class="hero">
-  <h1>Arrive Like the City Belongs to You.</h1>
-  <p style="font-size:1.2rem;margin-bottom:1.5em">Flat-rate luxury rides • JFK LGA EWR • Manhattan • 20-min pickup</p>
-  <a class="btn" href="#quote">Book in 30 Seconds</a>
-</section>
-
-<section id="fleet" style="padding:60px 5%;text-align:center">
-  <h2 style="margin-bottom:20px">Fleet</h2>
-  <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center">
-    <div style="background:#111;border-radius:8px;padding:20px;min-width:200px"><h4>Mercedes S-Class</h4><p>Executive sedan</p><p style="color:var(--gold)">From $109 to JFK</p></div>
-    <div style="background:#111;border-radius:8px;padding:20px;min-width:200px"><h4>Escalade ESV</h4><p>Group SUV</p><p style="color:var(--gold)">From $149 to JFK</p></div>
-    <div style="background:#111;border-radius:8px;padding:20px;min-width:200px"><h4>Sprinter Van</h4><p>14 seats</p><p style="color:var(--gold)">From $199 to JFK</p></div>
+  <div class="hero-text">
+    <h1>Arrive in New York<br>on your own terms.</h1>
+    <p>Flat-rate premium rides • JFK LGA EWR • 20-min pickup</p>
+    <a href="#quote" class="btn-gold">Get instant price</a>
   </div>
 </section>
 
-<section id="quote" style="padding:60px 5%;text-align:center">
-  <h2>Quick Quote</h2>
-  <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-    <input name="pickup" placeholder="Pickup" required style="padding:10px;border:none;border-radius:4px;min-width:200px">
-    <input name="dropoff" placeholder="Drop-off" required style="padding:10px;border:none;border-radius:4px;min-width:200px">
-    <input name="date" type="date" required style="padding:10px;border:none;border-radius:4px">
-    <button type="submit" class="btn">Get Price</button>
+<section id="fleet" class="fleet">
+  <h2>Our fleet</h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-img mercedes"></div>
+      <div class="card-content">
+        <h3>Mercedes S-Class</h3>
+        <p>Executive sedan, Wi-Fi, water, charger</p>
+        <span class="price">from $109 to JFK</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img escalade"></div>
+      <div class="card-content">
+        <h3>Cadillac Escalade ESV</h3>
+        <p>Group SUV, leather, privacy glass</p>
+        <span class="price">from $149 to JFK</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img sprinter"></div>
+      <div class="card-content">
+        <h3>Mercedes Sprinter</h3>
+        <p>14-seat van, luggage space, AC</p>
+        <span class="price">from $199 to JFK</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="quote" class="quote">
+  <h2>Quick quote</h2>
+  <form action="https://formspree.io/f/xkargqzw" method="POST">
+    <input type="text" name="pickup" placeholder="Pickup" required>
+    <input type="text" name="dropoff" placeholder="Drop-off" required>
+    <input type="datetime-local" name="date" required>
+    <select name="passengers"><option>1-2</option><option>3-4</option><option>5-7</option><option>8-14</option></select>
+    <button type="submit" class="btn-gold">Get price</button>
   </form>
 </section>
 
-<footer>J
+<footer>
+  <div class="footer-inner">
+    <p>JFK Black Cars © <span id="yr"></span>  •  DOT licensed  •  TLC permitted</p>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
