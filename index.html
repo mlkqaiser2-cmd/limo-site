@@ -2,74 +2,81 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JFK Black Cars | Premium NYC Limo Service</title>
+<title>JFK Black Cars | Premium NYC Limousine Service</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="logo">JFK <span>Black Cars</span></div>
-  <nav>
-    <a href="#fleet">Fleet</a>
-    <a href="#quote">Quote</a>
-    <a href="#contact">Contact</a>
-    <a href="#quote" class="btn-outline">Book now</a>
-  </nav>
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="/">JFK Black Cars</a>
+    <nav class="nav">
+      <a class="nav-link" href="#fleet">Fleet</a>
+      <a class="nav-link" href="#quote">Quote</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="btn-primary" href="#quote">Book now</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-  <div class="hero-text">
+  <div class="hero-img"></div>
+  <div class="hero-content">
     <h1>Arrive in New York<br>on your own terms.</h1>
-    <p>Flat-rate premium rides • JFK LGA EWR • 20-min pickup</p>
-    <a href="#quote" class="btn-gold">Get instant price</a>
+    <p>Flat-rate premium limousine service • JFK LGA EWR • 20-min pickup</p>
+    <a class="btn-primary btn-large" href="#quote">Get instant price</a>
   </div>
 </section>
 
 <section id="fleet" class="fleet">
-  <h2>Our fleet</h2>
-  <div class="cards">
-    <article class="card">
-      <div class="card-img mercedes"></div>
-      <div class="card-content">
-        <h3>Mercedes S-Class</h3>
-        <p>Executive sedan, Wi-Fi, water, charger</p>
-        <span class="price">from $109 to JFK</span>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-img escalade"></div>
-      <div class="card-content">
-        <h3>Cadillac Escalade ESV</h3>
-        <p>Group SUV, leather, privacy glass</p>
-        <span class="price">from $149 to JFK</span>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-img sprinter"></div>
-      <div class="card-content">
-        <h3>Mercedes Sprinter</h3>
-        <p>14-seat van, luggage space, AC</p>
-        <span class="price">from $199 to JFK</span>
-      </div>
-    </article>
+  <div class="container">
+    <h2>Our fleet</h2>
+    <div class="fleet-grid">
+      <article class="fleet-card">
+        <div class="card-img mercedes"></div>
+        <div class="card-body">
+          <h3>Mercedes S-Class</h3>
+          <p>Executive sedan, Wi-Fi, water, charger</p>
+          <span class="price">from $109 to JFK</span>
+        </div>
+      </article>
+      <article class="fleet-card">
+        <div class="card-img escalade"></div>
+        <div class="card-body">
+          <h3>Cadillac Escalade ESV</h3>
+          <p>Group SUV, leather, privacy glass</p>
+          <span class="price">from $149 to JFK</span>
+        </div>
+      </article>
+      <article class="fleet-card">
+        <div class="card-img sprinter"></div>
+        <div class="card-body">
+          <h3>Mercedes Sprinter</h3>
+          <p>14-seat van, luggage space, AC</p>
+          <span class="price">from $199 to JFK</span>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
 <section id="quote" class="quote">
-  <h2>Quick quote</h2>
-  <form action="https://formspree.io/f/xkargqzw" method="POST">
-    <input type="text" name="pickup" placeholder="Pickup" required>
-    <input type="text" name="dropoff" placeholder="Drop-off" required>
-    <input type="datetime-local" name="date" required>
-    <select name="passengers"><option>1-2</option><option>3-4</option><option>5-7</option><option>8-14</option></select>
-    <button type="submit" class="btn-gold">Get price</button>
-  </form>
+  <div class="container">
+    <h2>Quick quote</h2>
+    <form class="quote-form" action="https://formspree.io/f/xkargqzw" method="POST">
+      <input type="text" name="pickup" placeholder="Pickup" required>
+      <input type="text" name="dropoff" placeholder="Drop-off" required>
+      <input type="datetime-local" name="date" required>
+      <select name="passengers"><option>1-2</option><option>3-4</option><option>5-7</option><option>8-14</option></select>
+      <button type="submit" class="btn-primary btn-large">Get price</button>
+    </form>
+  </div>
 </section>
 
-<footer>
-  <div class="footer-inner">
-    <p>JFK Black Cars © <span id="yr"></span>  •  DOT licensed  •  TLC permitted</p>
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="yr"></span> JFK Black Cars • DOT licensed • TLC permitted</p>
   </div>
 </footer>
 
