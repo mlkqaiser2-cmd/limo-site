@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ====== Blacklane white header + search bar clone ====== */
+/* ====== Blacklane white header + exact booking-box clone ====== */
 :root{
   --bg:#ffffff;
   --surface:#ffffff;
@@ -84,51 +84,46 @@ a{
   background:#333;
 }
 
-/* ====== Blacklane search bar ====== */
+/* ====== exact Blacklane booking-box ====== */
 .search-bar{
   background:#fafafa;
   border-bottom:1px solid #e0e0e0;
-  padding:20px 0;
-  margin-top:76px; /* below fixed header */
-}
-.search-inner{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
+  padding:32px 0;
+  margin-top:76px;
 }
 .search-title{
-  width:100%;
-  font-size:1.5rem;
+  font-size:2rem;
   font-weight:300;
-  margin-bottom:12px;
+  margin-bottom:24px;
   letter-spacing:-1px;
 }
-.search-field{
-  flex:1 1 200px;
+.search-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+  align-items:end;
+}
+.search-box{
+  background:#ffffff;
+  border:1px solid #cccccc;
+  border-radius:var(--radius);
+  padding:14px;
   display:flex;
   flex-direction:column;
   gap:6px;
 }
-.search-field label{
-  font-size:.8rem;
+.search-box label{
+  font-size:.75rem;
   color:var(--muted);
   text-transform:uppercase;
   letter-spacing:.5px;
 }
-.search-field input,.search-field select{
-  padding:12px 14px;
-  border:1px solid #cccccc;
-  border-radius:var(--radius);
-  background:#ffffff;
+.search-box input,.search-box select{
+  border:none;
+  outline:none;
+  font-size:1rem;
   color:var(--text);
-  font-size:.95rem;
-}
-.search-note{
-  width:100%;
-  font-size:.8rem;
-  color:var(--muted);
-  margin-top:6px;
+  background:transparent;
 }
 .btn-search{
   background:var(--gold);
@@ -143,10 +138,15 @@ a{
 .btn-search:hover{
   background:#b08c57;
 }
+.search-note{
+  font-size:.8rem;
+  color:var(--muted);
+  margin-top:8px;
+}
 
 .hero{
   position:relative;
-  height:calc(100vh - 76px - 76px); /* minus header + search */
+  height:calc(100vh - 76px - 140px);
   min-height:540px;
   display:flex;
   align-items:center;
@@ -291,29 +291,31 @@ h1{
 </header>
 
 <section class="search-bar">
-  <div class="container search-inner">
+  <div class="container">
     <div class="search-title">Limo Service in NYC</div>
-    <div class="search-field">
-      <label>One way</label>
-      <select><option>One way</option><option>By the hour</option></select>
+    <div class="search-grid">
+      <div class="search-box">
+        <label>One way</label>
+        <select><option>One way</option><option>By the hour</option></select>
+      </div>
+      <div class="search-box">
+        <label>From</label>
+        <input type="text" placeholder="Address, airport, hotel,">
+      </div>
+      <div class="search-box">
+        <label>To</label>
+        <input type="text" placeholder="Address, airport, hotel,">
+      </div>
+      <div class="search-box">
+        <label>Date</label>
+        <input type="date" value="2026-01-17">
+      </div>
+      <div class="search-box">
+        <label>Pickup time</label>
+        <input type="time" value="04:11">
+      </div>
+      <button class="btn-search">Search</button>
     </div>
-    <div class="search-field">
-      <label>From</label>
-      <input type="text" placeholder="Address, airport, hotel,">
-    </div>
-    <div class="search-field">
-      <label>To</label>
-      <input type="text" placeholder="Address, airport, hotel,">
-    </div>
-    <div class="search-field">
-      <label>Date</label>
-      <input type="date" value="2026-01-17">
-    </div>
-    <div class="search-field">
-      <label>Pickup time</label>
-      <input type="time" value="04:11">
-    </div>
-    <button class="btn-search">Search</button>
     <div class="search-note">Chauffeur will wait 15 minutes</div>
   </div>
 </section>
